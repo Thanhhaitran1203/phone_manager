@@ -11,11 +11,12 @@ import java.util.List;
 
 public class PhoneServiceJDBC implements PhoneService<Phone>{
     ICategoryService categoryService = new CategoryService();
+    Connection connection = ConnectionJDBC.getConnect();
 
     @Override
     public List<Phone> fillAll() {
         List<Phone> phoneList = new ArrayList<>();
-        Connection connection = ConnectionJDBC.getConnect();
+
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement("select * from phone");
@@ -37,7 +38,17 @@ public class PhoneServiceJDBC implements PhoneService<Phone>{
     }
 
     @Override
-    public void add(Phone phone) {
+    public void add(Phone phone, int categoryId) {
+        try {
+            PreparedStatement statement = connection.prepareStatement("insert into phone(name,price,phone_categoryid,description) values (?,?,?,?)");
+            statement.setString(1,phone.getName());
+            statement.setInt(2,phone.getPrice());
+            statement.setInt(3,categoryId);
+            statement.setString(4, phone.getDescription());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

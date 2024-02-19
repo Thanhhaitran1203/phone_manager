@@ -18,6 +18,12 @@ public class Phone {
         this.description = description;
     }
 
+    public Phone(String name, int price, String description) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+    }
+
     public int getId() {
         return id;
     }

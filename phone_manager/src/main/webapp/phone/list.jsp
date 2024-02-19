@@ -13,7 +13,7 @@
 </head>
 <body>
 <h1>Phone List</h1>
-<a>Create new phone</a>
+<a href="/?action=create">Create new phone</a>
 <table border="1px">
     <tr>
         <td>Name</td>
