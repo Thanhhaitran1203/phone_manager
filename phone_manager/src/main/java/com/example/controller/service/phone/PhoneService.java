@@ -1,6 +1,4 @@
-package service;
-
-import model.Phone;
+package com.example.controller.service.phone;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package model;
+package com.example.controller.model;
 
 public class PhoneCategory {
     private int id;

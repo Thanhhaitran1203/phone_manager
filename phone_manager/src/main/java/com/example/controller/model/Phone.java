@@ -1,20 +1,20 @@
-package model;
+package com.example.controller.model;
 
 public class Phone {
     private int id;
     private String name;
     private int price;
-    private int phoneCategoryId;
+    private String phoneCategory;
     private String description;
 
     public Phone() {
     }
 
-    public Phone(int id, String name, int price, int phoneCategoryId, String description) {
+    public Phone(int id, String name, int price, String phoneCategory, String description) {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.phoneCategoryId = phoneCategoryId;
+        this.phoneCategory = phoneCategory;
         this.description = description;
     }
 
@@ -42,12 +42,12 @@ public class Phone {
         this.price = price;
     }
 
-    public int getPhoneCategoryId() {
-        return phoneCategoryId;
+    public String getPhoneCategory() {
+        return phoneCategory;
     }
 
-    public void setPhoneCategoryId(int phoneCategoryId) {
-        this.phoneCategoryId = phoneCategoryId;
+    public void setPhoneCategory(String phoneCategory) {
+        this.phoneCategory = phoneCategory;
     }
 
     public String getDescription() {
